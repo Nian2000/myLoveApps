@@ -1,0 +1,70 @@
+{	
+	"easycom": {
+		// npm安装的方式不需要前面的"@/"，下载安装的方式需要"@/"
+		// npm安装方式
+		// "^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+		// 下载安装方式
+		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
+	},
+	"pages": [
+		{"path": "pages/index/index"},
+		{"path":"pages/login/index"},
+		{"path":"pages/register/index"},
+		{"path":"pages/user/index"},
+		// {"path":"pages/user/info"},
+		{"path":"pages/user/user_head"},
+		{"path":"pages/user/password"},
+		// {"path":"pages/user/paypwd"},
+		{"path":"pages/user/set"},
+		{"path":"pages/video/index"},
+		{"path":"pages/friend/index"},
+		{"path":"pages/magic/index"}
+	],
+	"subPackages": [{
+		"root": "bbs",
+		"pages": [{
+				"path": "index/index"
+			},
+			{
+				"path": "topic/add"
+			},
+			{
+				"path": "topic/edit"
+			},
+			{
+				"path": "topic/my",
+				"style": {
+					"enablePullDownRefresh":true
+				}
+			},
+			{
+				"path": "topic/show"
+			},
+			{
+				"path":"comment/my",
+				"style":{
+					"enablePullDownRefresh":true
+				}
+			},{
+				"path":"love/my",
+				"style":{
+					"enablePullDownRefresh":true
+				}
+			},{
+				"path":"fav/my",
+				"style":{
+					"enablePullDownRefresh":true
+				}
+			}
+		]
+	}],
+	"globalStyle": {
+		"backgroundColorTop":"#FFFFFF", // iOS APP真机bounce回弹区域默认灰色,建议统一重置为白色
+		"mp-alipay": {
+			/* 支付宝小程序特有相关 */
+			"transparentTitle": "always",
+			"allowsBounceVertical": "NO"
+		},
+		"navigationStyle": "custom"
+	}
+}
