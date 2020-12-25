@@ -1,7 +1,8 @@
 'use strict';
 const db = uniCloud.database();
 const table = 'magic';
-const dbCmd = db.command
+const dbCmd = db.command;
+
 exports.main = async (event, context) => {
 	const action = event.cloudAction;
 	let params = event.params

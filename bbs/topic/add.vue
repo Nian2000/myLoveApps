@@ -17,6 +17,9 @@
 				<view class="cu-form-group align-start">
 					<textarea name="content" maxlength="2000" placeholder="爱你就像要记录的内容一样,说不完."></textarea>
 				</view>
+				<view class="flex padding" style="flex-direction:row-reverse; background-color:#fff;">
+					<switch color="#fc6c8d" name="day" /><text style="font-size: 10rpx; line-height: 50rpx; padding:0rpx 20rpx;">纪念日</text>
+				</view>
 				<view class="bg-white">
 					<upimg-box @callParent="callImgList" :defaultImgsList="[]"></upimg-box>
 

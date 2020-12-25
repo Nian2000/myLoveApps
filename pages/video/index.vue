@@ -1,8 +1,8 @@
 <template>
 	<view class="videoBox">
-		<!-- <cu-custom bgColor="bg-gradual-blue">
-			<block slot="content">视频</block>
-		</cu-custom> -->
+		<cu-custom bgColor="bg-gradual-blue">
+			<block slot="content">我们的小视频</block>
+		</cu-custom>
 		
 		<video id="myvideo" class="myvideo" 
 			@fullscreenclick="next" 
@@ -23,15 +23,18 @@
 			<view class="text-gray justify-center flex text-sm margin-top-sm"><text class="text-red">*</text><text>进入全屏后点击屏幕即可播放下一个视频。</text></view>
 		</view> -->
 		<view class="text-gray justify-between flex text-sm padding-left padding-right">
-			<view><text class="text-red">*</text><text>♥进入全屏后点击屏幕即可播放下一个视频哦。</text></view>
+			<view><text>♥进入全屏后点击屏幕即可播放下一个视频哦。</text></view>
 			<view>{{index + 1 + start}}/{{total}}</view>
 		</view>
-		<view class="flex justify-around margin-top-sm">
+		<view class="flex justify-around margin-top-sm ">
 			<button class="cu-btn bg-gradual-blue shadow " @click="playVideo">全屏</button>
 			<button class="cu-btn bg-gradual-orange shadow" @click="prev" :disabled="prevBtn">上一个</button>
-			<button class="cu-btn bg-gradual-green shadow" @click="next" :disabled="nextBtn">下一个</button>
+			<button class="cu-btn bg-gradual-blue shadow" @click="next" :disabled="nextBtn">下一个</button>
+			
 		</view>
-		
+		<view class="padding" style="background-color: #fff;text-align: center;">
+			❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤
+		</view>
 		<m-footer tab="video"></m-footer>
 	</view>
 </template>

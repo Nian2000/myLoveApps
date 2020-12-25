@@ -49,7 +49,7 @@
 			
 			<view class="cu-bar bg-white solid-bottom margin-top">
 				<view class="action">
-					<text class="cuIcon-titles text-blue"></text> 跟帖列表
+					<text class="cuIcon-titles text-blue"></text> 回复列表
 				</view>
 			</view>
 			

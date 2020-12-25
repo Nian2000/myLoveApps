@@ -15,6 +15,9 @@
 				<view class="cu-form-group align-start">
 					<textarea :value="data.content" name="content" maxlength="-1" placeholder="请输入内容"></textarea>
 				</view>
+				<view class="flex padding" style="flex-direction:row-reverse; background-color:#fff;">
+					<switch :checked="data.day" color="#fc6c8d" name="day" /><text style="font-size: 10rpx; line-height: 50rpx; padding:0rpx 20rpx;">纪念日</text>
+				</view>
 				<view class="bg-white">
 					<upimg-box @callParent="callImgList" :defaultImgsList="data.imgList"></upimg-box>
 					<view class="padding flex flex-direction">

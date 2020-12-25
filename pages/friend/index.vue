@@ -19,41 +19,26 @@
 					{{s}}秒
 				</view>
 			</view>
+
 		</view>
 
 		<view class="tps">
 			小王与小念在一起的时间<br>
 			定个小目标 99999天
 		</view>
-		<view class="zan">
-			<likeButton :throttle="100" :large="2">
-				<div class="heart" @click="love"></div>
+		<div class="heart" @click="love"></div>
 
-			</likeButton>
-		</view>
 		<fireworks v-if="isReady" />
-	<mt-footer></mt-footer>
+		<mt-footer></mt-footer>
 	</view>
 </template>
 <script>
 	import mtFooter from "../../components/footer.vue";
-	//引入js文件
-	//import browser from '../../js_sdk/ww-browser/libs/browser.js'
-
-	//使用
-	// var options = {
-	//     'data': '123' // 自定义参数
-	// }
-	// browser.init(options)
-	// browser.show("http://www.icoolc.com")
-	import likeButton from '@/components/like-button/like-button.vue'
-
 	import fireworks from '@/components/sanshui-fireworks/index.vue'
 
 
 	export default {
 		components: {
-			likeButton,
 			fireworks,
 			mtFooter
 		},
@@ -72,18 +57,38 @@
 		},
 		methods: {
 			love: function() {
-				uni.request({
-				    url: 'http://love.h2t.me:520/send', //仅为示例，并非真实接口地址。
-				    data: {
-				        text: 'uni.request'
-				    },
-				    header: {
-				        'custom-header': 'hello' //自定义请求头信息
-				    },
-				    success: (res) => {
+				uniCloud.callFunction({
+					name: "pushDemo",
+					data: {
+						title: "❤想你啦❤",
+						content: "发送小心心 biu~❤",
+						p: {
+							id: 10
+						}
+					}
+				})
 
-				    }
-				});
+
+				// uniCloud.callFunction({
+				// 	name: "magic",
+				// 	data: {
+				// 		cloudAction: "push",
+				// 		params: {
+				// 			title:"❤想你啦❤",
+				// 			content:"发送小心心 biu~❤",
+				// 			p:{
+				// 				id:10
+				// 			}
+				// 		}
+				// 	},
+				// 	success(response) {
+				// 		 console.log(response)
+
+				// 	},
+				// 	fail() {
+
+				// 	}
+				// })
 
 			},
 			time: function() {
@@ -100,7 +105,7 @@
 				this.m = Math.floor(ltime / 60 % 60);
 				//换算成分钟取去掉分钟的余数（也就是秒） 小数点向下舍入取整
 				this.s = Math.floor(ltime % 60);
-				setTimeout(this.time, 1000 )
+				setTimeout(this.time, 1000)
 			}
 		}
 	}

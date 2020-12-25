@@ -23,7 +23,7 @@
 		<view v-if="!unLogin" class="padding-tb-xl margin-top-xl">
 			<view class="cu-bar foot bg-white justify-end flex">
 				<view class="padding-right-xl">
-					<button class="cu-btn bg-blue shadow lg" @click="show = true">写跟帖</button>
+					<button class="cu-btn bg-blue shadow lg" @click="show = true">回复</button>
 				</view>		
 			</view>	
 		</view>

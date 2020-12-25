@@ -1,6 +1,8 @@
 <template>
 	<view>
-
+		<cu-custom bgColor="bg-gradual-blue">
+			<block slot="content">回忆星球</block>
+		</cu-custom>
 		<mescroll-body ref="mescrollRef" @init="mescrollInit" @down="downCallback" @up="upCallback" :up="upOption">
 			<!--  @init="mescrollInit" @down="downCallback" @up="upCallback"为固定值,不可删改(与mescroll-mixins保持一致) 
 			:down="downOption" :up="upOption" 绝大部分情况无需配置 
@@ -10,7 +12,7 @@
 			<view class="cu-card case isCard">
 				<view class="cu-item shadow" v-for="(item,index) in list" :key="index" @click="goDetail(item._id)">
 					<view class="image">
-						<image mode="widthFix" :src="item.imgList[0].imgurl"></image>
+						<image class="maxHeight" mode="aspectFill" :src="item.imgList[0].imgurl"></image>
 						<view class="cu-bar bg-shadeBottom"> <text class="text-cut">{{item.title}}</text></view>
 					</view>
 					<view class="text-content padding-sm text-cut" style="width:100%;">
@@ -139,5 +141,8 @@
 </script>
 
 <style lang="scss" scoped>
+	.maxHeight {
+		
 
+	}
 </style>

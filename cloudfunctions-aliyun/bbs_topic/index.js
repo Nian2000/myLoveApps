@@ -8,6 +8,21 @@ exports.main = async (event, context) => {
 	const action=event.cloudAction;
  
 	switch(action){
+		case "day":
+			var collection = db.collection(table)
+			var res = await collection
+				.where({
+					day:true
+				})
+				.orderBy("_id","desc")
+				.get();
+			return {
+				error:0,
+				data:{
+					list:res.data
+				}
+			};		 	
+			break;
 		case "index":
 			var collection = db.collection(table)
 			var res = await collection
